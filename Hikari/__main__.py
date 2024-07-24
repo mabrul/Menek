@@ -81,37 +81,37 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*ʜᴇʟʟᴏ {} !*
-✪ sᴀʏᴀ ᴋᴀᴢᴜ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ [🤖](https://telegra.ph//file/58ab86e8fcb5e0c748165.jpg)
+*hiiii {} !*
+✪ saya rasta management bot [🤖](https://telegra.ph//file/4705e48de3619905776b0.jpg)
 ────────────────────────
-◈ *ᴜᴘᴛɪᴍᴇ:* `{}`
-◈ `{}` *ᴘᴇɴɢɢᴜɴᴀ, ᴅɪ * `{}` *ɢʀᴏᴜᴘ*
+◈ *uptime:* `{}`
+◈ `{}` *pengguna, di * `{}` *group*
 ────────────────────────
-⬝ ᴛᴇᴋᴀɴ /help ᴜɴᴛᴜᴋ ʙᴀɴᴛᴜᴀɴ
+⬝ tekan /help untuk bantuan
 """
 
 buttons = [
         [
         InlineKeyboardButton(
-            text="➕️ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴏᴜᴘ ➕️", url="t.me/KazuxxRobot?startgroup=true"
+            text="➕️ tambahkan saya ke group ➕️", url="t.me/RastaMusicBot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="t.me/kazusupportgrp"
+        InlineKeyboardButton(text="support", url="t.me/Supprotrewe"
         ),
-        InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url="t.me/KazuxProjects"
+        InlineKeyboardButton(text="channel", url="t.me/about_rewe"
         ),
     ],
     [
         InlineKeyboardButton(
-            text="ᴏᴡɴᴇʀ", url="t.me/inikazu"
+            text="owner", url="t.me/rewe_anu"
         ),
     ],
     [
-        InlineKeyboardButton(text="🗒️ʙᴀɴᴛᴜᴀɴ", callback_data="hikari_support"
+        InlineKeyboardButton(text="🗒️bantuan", callback_data="hikari_support"
        ),
         InlineKeyboardButton(
-            text="ᴅᴏɴᴀsɪ", callback_data="hikari_own"
+            text="donasi", callback_data="hikari_own"
        ),
     ],
 ]
@@ -120,10 +120,10 @@ buttons = [
 HELP_STRINGS = """
 Klik tombol di bawah ini untuk mendapatkan deskripsi tentang perintah spesifik."""
 
-HIKARI_IMG = "https://telegra.ph/file/05c7982e106962b905ef4.jpg"
+HIKARI_IMG = "https://telegra.ph//file/4705e48de3619905776b0.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @disinikazu \
+ You can support the project by contacting @rewe_anu \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -208,7 +208,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="kembali", callback_data="help_back")]]
                     ),
                 )
 
@@ -239,7 +239,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>ʜᴇʟʟᴏ ᴋᴀᴢᴜ ꭙ ꝛᴏʙᴏᴛ!</b>\n<b>𝚄𝚙𝚝𝚒𝚖𝚎:</b> <code>{uptime}</code>",
+            f"<b>Hello Rasta X Robot!</b>\n<b>𝚄𝚙𝚝𝚒𝚖𝚎:</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
@@ -320,7 +320,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="kembali", callback_data="help_back")]]
                 ),
             )
 
@@ -366,21 +366,21 @@ def hikari_about_callback(update, context):
     if query.data == "hikari_":
         query.message.edit_text(
             text="🎧 Bantuan Perintah Music."
-            "\npilih menu di bawah ini untuk melihat bantuan Music Kazu ",
+            "\npilih menu di bawah ini untuk melihat bantuan Music Rasta ",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ᴘᴇʀɪɴᴛᴀʜ ᴀᴅᴍɪɴ", callback_data="hikari_admin"),
-                    InlineKeyboardButton(text="ᴘᴇʀɪɴᴛᴀʜ ʙᴏᴛ", callback_data="hikari_notes"),
+                    InlineKeyboardButton(text="perintah admin", callback_data="hikari_admin"),
+                    InlineKeyboardButton(text="perintah bot", callback_data="hikari_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="ᴘᴇʀɪɴᴛᴀʜ ᴘʟᴀʏ", callback_data="source_"),
-                    InlineKeyboardButton(text="ᴘᴇʀɪɴᴛᴀʜ ᴇxsᴛʀᴀ", callback_data="hikari_credit"),
+                    InlineKeyboardButton(text="perintah play", callback_data="source_"),
+                    InlineKeyboardButton(text="perintah exstra", callback_data="hikari_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_support"),
+                    InlineKeyboardButton(text="kembali", callback_data="hikari_support"),
                  ]
                 ]
             ),
@@ -441,22 +441,22 @@ def hikari_about_callback(update, context):
             "\n\n • /queue or /cqueue- Periksa Daftar Antrian Musik",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_")]]
+                [[InlineKeyboardButton(text="kembali", callback_data="hikari_")]]
             ),
         )
     elif query.data == "hikari_support":
         query.message.edit_text(
-            text="*📝 Bantuan Perintah Kazu*"
-            "\npilih tombol dibawah untuk melihat bantuan perintah Kazu.",
+            text="*📝 Bantuan Perintah Rasta*"
+            "\npilih tombol dibawah untuk melihat bantuan perintah Rasta.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="🎧ᴍᴜsɪᴄ", callback_data="hikari_"),
-                    InlineKeyboardButton(text="🤖ᴍᴀɴᴀɢᴇ", callback_data="help_back"),
+                    InlineKeyboardButton(text="🎧music", callback_data="hikari_"),
+                    InlineKeyboardButton(text="🤖manage", callback_data="help_back"),
                  ],
                  [
-                    InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_back"),
+                    InlineKeyboardButton(text="kembali", callback_data="hikari_back"),
                  
                  ]
                 ]
@@ -490,23 +490,23 @@ def hikari_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_")
+                    InlineKeyboardButton(text="kembali", callback_data="hikari_")
                  ]
                 ]
             ),
         )
     elif query.data == "hikari_own":
         query.message.edit_text(
-            text="👨‍💻 Untuk yang ingin berdonasi sebagai ucapan terimakasih kepada Pembuat Kazu,"
+            text="👨‍💻 Untuk yang ingin berdonasi sebagai ucapan terimakasih kepada Pembuat Rasta."
             "\n\n • Silahkan Hubungi Owner atau klik dibawah ini",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="**κ λ z υ**", url="t.me/disinikazu"),
+                    InlineKeyboardButton(text="**Rewe**", url="t.me/rewe_anu"),
                  ],
                  [
-                    InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_back"),
+                    InlineKeyboardButton(text="kembali", callback_data="hikari_back"),
                  ]
                 ]
             ),
@@ -535,7 +535,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_")
+                    InlineKeyboardButton(text="kembali", callback_data="hikari_")
                  ]
                 ]
             ),
@@ -582,7 +582,7 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="ʙᴀɴᴛᴜᴀɴ ᴘᴇʀɪɴᴛᴀʜ ↗️",
+                            text="bantuan perintah ↗️",
                             url=f"t.me/{context.bot.username}?start=help",
                         )
                     ]
@@ -598,7 +598,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="hikari_support")]]
+                [[InlineKeyboardButton(text="kembali", callback_data="hikari_support")]]
             ),
         )
 
@@ -739,7 +739,7 @@ def get_settings(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴇᴛᴛɪɴɢs",
+                            text="settings",
                             url=f"t.me/{context.bot.username}?start=stngs_{chat.id}",
                         )
                     ]
@@ -807,7 +807,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "**ʜᴀʟʟᴏ ᴋᴀᴢᴜ ʀᴏʙᴏᴛ ʜɪᴅᴜᴘ ᴋᴇᴍʙᴀʟɪ.**",
+                "**Hallo Rasta X Robot Hidup Kembali.**",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
